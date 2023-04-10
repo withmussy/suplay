@@ -10,16 +10,7 @@
   "author": "mussy (Mustapha Salehi)",
   "homepage_url": "https://github.com/withmussy/",
   "short_name": "Suplay",
-  "action": {
-    "default_popup": "popup.html",
-    "default_title": "Suplay",
-    "default_icon": {
-      "16": "assets/images/16.png",
-      "32": "assets/images/32.png",
-      "48": "assets/images/48.png",
-      "128": "assets/images/128.png"
-    }
-  },
+  "action": {},
   "icons": {
     "16": "assets/images/16.png",
     "32": "assets/images/32.png",

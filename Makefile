@@ -20,7 +20,7 @@ build:
 	@mkdir -p dist
 	@cp -r build/* dist
 	@echo 'Renaming files...' 
-	@mv dist/index.html dist/popup.html
+	@mv dist/index.html dist/main.html
 	@echo 'Zipping up build files for upload...'
 	@zip -r -X latestBuild.zip dist/*
 	@echo 'New extension build ready for upload!' 
