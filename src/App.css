@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+/* fonts */
+@font-face {
+  font-family: Vazir;
+  src: url('./assets/fonts/vazir/Vazirmatn-Medium.ttf');
+}
+@font-face {
+  font-family: VazirBold;
+  src: url('./assets/fonts/vazir/Vazirmatn-Bold.ttf');
+}
+@font-face {
+  font-family: VazirLight;
+  src: url('./assets/fonts/vazir/Vazirmatn-Light.ttf');
+}
+/* end fonts */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: VazirLight;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* some buttons in videojs plugin */
+.vjs-current-time,
+.vjs-playback-rate {
+  display: block !important;
 }
+/* end some buttons in videojs plugin */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* disable user selecting */
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* end disable user selecting */
