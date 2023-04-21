@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {Modal, Button, Alert} from 'antd';
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import { Modal, Button, Alert } from "antd";
+import styled from "styled-components";
+import { translate } from "utils/translate/index";
 
 interface PropsType {
   show: boolean;
@@ -9,12 +10,14 @@ interface PropsType {
 }
 
 const DefinitionBase = {
-  definition: '',
-  keyText: '',
+  definition: "",
+  keyText: "",
 };
 
+translate();
+
 const WordDefinition = (props: PropsType) => {
-  const {show, word, onResume} = props;
+  const { show, word, onResume } = props;
 
   const [DefinitionResult, setDefinitionResult] =
     useState<typeof DefinitionBase>(DefinitionBase);
@@ -23,10 +26,12 @@ const WordDefinition = (props: PropsType) => {
     if (show && word.length !== 0) getDefinition();
   }, [show]);
 
-  const getDefinition = () => {
-    // ipcRenderer.send('search', word);
-    // ipcRenderer.on('search-reply', (event, res) => {
-    //   setDefinitionResult(res)
+  const getDefinition = async () => {
+    // const { text } = await translate(word, { to: "fa" });
+
+    // setDefinitionResult({
+    //   definition: text,
+    //   keyText: word,
     // });
   };
 
@@ -34,19 +39,20 @@ const WordDefinition = (props: PropsType) => {
     onResume();
   };
 
-  const {definition, keyText} = DefinitionResult;
+  const { definition, keyText } = DefinitionResult;
 
   return (
     <Modal
       title="Word Definition"
       footer={null}
       onCancel={handleCancel}
-      visible={show}>
+      visible={show}
+    >
       {definition.length !== 0 && keyText !== word && (
         <StyledAlert type="error" message="not match but similar" />
       )}
       {definition.length !== 0 ? (
-        <Wrapper dangerouslySetInnerHTML={{__html: definition}} />
+        <Wrapper dangerouslySetInnerHTML={{ __html: definition }} />
       ) : (
         <StyledAlert message="404- not found" type="error" />
       )}
