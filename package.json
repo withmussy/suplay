@@ -21,7 +21,6 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "require.js": "^1.0.0",
-    "ripemd128-js": "^1.0.2",
     "srt-parser-2": "^1.2.2",
     "styled-components": "^5.3.9",
     "subtitle-time": "^1.0.6",

@@ -1,5 +1,5 @@
 import {inflate} from 'pako';
-import {ripemd128} from 'ripemd128-js';
+import Ripemd128 from './ripemd128';
 import {decompress} from 'lzo-wasm'
 import * as Promise from "bluebird";
 
@@ -34,7 +34,7 @@ export default function MParser () {
    * @return an ArrayBuffer carrying decrypted data, occupying the same memory space of source buffer
    */
   function decrypt(buf, key) {
-    key = ripemd128(key);
+    key = Ripemd128(key);
     var byte, keylen = key.length, prev = 0x36, i = 0, len = buf.length;
     for (; i < len; i++) {
       byte = buf[i];

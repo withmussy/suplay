@@ -12,8 +12,9 @@ export function translate() {
       parser([
         new File([res], "name.mdx", { type: "application/x-genesis-32x-rom"}),
       ]).then(function (resources) {
-        const MDict= MRenderer(resources);
-        MDict.lookup('hi').then(function($content) {
+        const MDict= MRenderer();
+
+        MDict(resources).lookup('hi').then(function($content) {
           console.log($content);
           console.log('--');
         });
