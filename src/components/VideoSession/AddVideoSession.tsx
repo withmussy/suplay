@@ -57,8 +57,9 @@ const AddVideoSession = (props: PropsType) => {
 
   const checkSubtitle = (file: File) => {
     const type = file.type;
+    const ext = file.name.split('.').pop();
 
-    if (type != 'application/x-subrip') {
+    if (type != 'application/x-subrip' && ext != 'srt') {
       message.error('your file should be srt');
       return Upload.LIST_IGNORE;
     }
